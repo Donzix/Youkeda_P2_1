@@ -1,0 +1,42 @@
+package org.vaadin.marcus.spring;
+
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.Route;
+
+@Route("/reg.html")
+public class Reg extends VerticalLayout {
+
+    public Reg()
+    {
+        TextField userNameField = new TextField();
+        initUserNameField(userNameField);
+
+        TextField passwordField = new TextField();
+        initPasswordField(passwordField);
+
+        TextField confirmField = new TextField();
+        initConfirmField(confirmField);
+
+        add(userNameField,passwordField,confirmField);
+
+        Button Reg = new Button();
+    }
+
+    public void initUserNameField(TextField userNameField)
+    {
+        userNameField.setLabel("UserName");
+        userNameField.setPlaceholder("please input username");
+    }
+    public void initPasswordField(TextField passwordField)
+    {
+        passwordField.setLabel("Password");
+        passwordField.setPlaceholder("please input password");
+    }
+    public void initConfirmField(TextField confirmField)
+    {
+        confirmField.setLabel("Confirm Password");
+        confirmField.setPlaceholder("please confirm password");
+    }
+}
